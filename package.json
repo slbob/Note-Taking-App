@@ -1,7 +1,7 @@
 {
   "name": "note-taking-app",
   "version": "1.0.0",
-  "description": "Simple note-taking app with Node.js, Express and MongoDB",
+  "description": "Simple note-taking app with Node.js, Express, MongoDB, and HTML/CSS/JS",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
