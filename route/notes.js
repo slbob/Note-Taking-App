@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const notesController = require('../controller/notesController');
+const notesController = require('../controllers/notesController');
+const auth = require('../middlewares/authMiddleware');
+
+router.use(auth); // protect all routes
 
 router.get('/', notesController.getNotes);
 router.get('/:id', notesController.getNoteById);
