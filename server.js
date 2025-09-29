@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const connectDB = require('./config/db');
 const notesRoutes = require('./routes/notes');
 const errorHandler = require('./middlewares/errorHandler');
@@ -13,6 +14,9 @@ connectDB();
 // Middlewares
 app.use(cors());
 app.use(express.json());
+
+// Serve static frontend
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/api/notes', notesRoutes);
